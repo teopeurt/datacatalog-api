@@ -194,18 +194,18 @@ class SourcesGetOneTest < RequestTestCase
         actual = parsed_response_body["comments"]
         @comments.each do |comment|
           expected = {
-            "href"   => "/comments/#{comment.id}",
-            "text"   => comment.text,
-            "parent" => nil,
-            "created_at" => Time.now.gmtime.strftime("%Y/%m/%d %H:%M:%S +0000"),
+            "href"         => "/comments/#{comment.id}",
+            "text"         => comment.text,
+            "parent"       => nil,
+            "created_at"   => Time.now,
             "rating_stats" => {
-              "count"   => 2,
-              "total"   => 1,
-              "average" => 0.5
+              "count"      => 2,
+              "total"      => 1,
+              "average"    => 0.5
             },
-            "user" => {
-              "name" => "Normal User",
-              "href" => "/users/#{@normal_user.id}"
+            "user"         => {
+              "name"       => "Normal User",
+              "href"       => "/users/#{@normal_user.id}"
             }
           }
           assert_include expected, actual

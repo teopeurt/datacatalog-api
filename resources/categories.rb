@@ -18,9 +18,11 @@ module DataCatalog
 
     property :name
 
-    property :source_ids do |category|
-      category.categorizations.map do |categorization|
-        categorization.source.id
+    property :sources do |category|
+      category.sources.map do |source|
+        {
+          "href" => "/sources/#{source.id}"
+        }
       end
     end
 

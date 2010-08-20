@@ -25,7 +25,7 @@ class CategoriesGetOneTest < RequestTestCase
       created_at
       id
       name
-      source_ids
+      sources
       updated_at
     )
   end
@@ -62,10 +62,14 @@ class CategoriesGetOneTest < RequestTestCase
 
       use "successful GET category with :id"
 
-      test "body should have correct source_ids" do
-        actual = parsed_response_body["source_ids"]
-        expected = @sources.map { |source| source.id.to_s }
-        assert_equal expected, actual
+      test "body should have correct sources" do
+        actual = parsed_response_body["sources"]
+        @sources.each do |source|
+          expected = {
+            "href" => "/sources/#{source.id}"
+          }
+          assert_include expected, actual
+        end
       end
     end
   end
