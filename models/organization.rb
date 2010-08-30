@@ -18,7 +18,6 @@ class Organization
   key :user_id,           ObjectId
   key :parent_id,         ObjectId
   key :top_parent_id,     ObjectId
-  key :interest,          Integer
   key :top_level,         Boolean, :default => false
   key :custom,            Hash
   key :raw,               Hash

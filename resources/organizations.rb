@@ -28,7 +28,6 @@ module DataCatalog
     property :catalog_name
     property :catalog_url
     property :broken_links
-    property :interest
     property :top_level
     property :source_count
     property :custom

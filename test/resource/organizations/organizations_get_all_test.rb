@@ -60,7 +60,6 @@ class OrganizationsGetAllTest < RequestTestCase
         home_url
         catalog_name
         catalog_url
-        interest
         top_level
         source_count
         custom
