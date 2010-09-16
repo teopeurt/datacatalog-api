@@ -1,16 +1,16 @@
 require 'rubygems'
+begin
+  require 'bundler'
+  Bundler.setup
+rescue LoadError
+  puts "Please run `gem install bundler` and `bundle install`"
+end
 require 'test/unit'
 require 'rack/test'
-require 'rr'
-
-gem 'crack', '>= 0.1.4'
 require 'crack/json'
-
-gem 'tu-context', '>= 0.5.8'
-require 'tu-context'
-
-gem 'pending', '>= 0.1.1'
 require 'pending'
+require 'rr'
+require 'tu-context'
 
 base = File.dirname(__FILE__)
 Dir.glob(base + '/helpers/test_helpers/*.rb').each { |f| require f }

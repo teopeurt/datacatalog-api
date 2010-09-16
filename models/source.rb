@@ -1,7 +1,4 @@
-gem 'frequency', '>= 0.1.2', '< 0.2.0'
 require 'frequency'
-
-gem 'kronos', '>= 0.1.6'
 require 'kronos'
 
 class Source

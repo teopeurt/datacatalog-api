@@ -1,6 +1,5 @@
 desc "Run tests"
 task :test => %w(
-  dependencies:check
   db:reset:test
   test:unit
   test:resource

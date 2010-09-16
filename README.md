@@ -1,17 +1,19 @@
 # Install MongoDB
 
-* Download the latest MongoDB stable build from http://www.mongodb.org/display/DOCS/Downloads
-* Setup and run Mongo using the directions at http://www.mongodb.org/display/DOCS/Getting+Started
+* Download the [latest MongoDB stable build](http://www.mongodb.org/display/DOCS/Downloads).
+* Setup and run Mongo using the [getting started directions](http://www.mongodb.org/display/DOCS/Getting+Started).
 
-# Gem Dependencies
+# Install Ruby Dependencies
 
-    # Install dependencies with a rake task:
-    rake dependencies:install
+    gem install bundler # unless you are already have it
+    bundle
+
+Not familiar with bundler? [Read more about it](http://gembundler.com/).
 
 # Setting up Config Files
 
-* Create a `config/config.yml`, based off `config/config_example.yml`
-* If using Passenger to run the app (or for deployment), create a `config.ru` based off `config.ru.example`.
+* Create a `config/config.yml` using `config/config_example.yml` as an example.
+* If using Passenger to run the app (or for deployment), create a `config.ru` using `config.ru.example` as an example.
 
 # Running Test Suite
 

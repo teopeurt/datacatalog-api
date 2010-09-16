@@ -1,6 +1,10 @@
 require 'rubygems'
-
-gem 'mongo_mapper', '= 0.8.2'
+begin
+  require 'bundler'
+  Bundler.setup
+rescue LoadError
+  puts "Please run `gem install bundler` and `bundle install`"
+end
 require 'mongo_mapper'
 
 module Config

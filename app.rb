@@ -1,6 +1,10 @@
 require 'rubygems'
-
-gem 'sinatra', '>= 1.0'
+begin
+  require 'bundler'
+  Bundler.setup
+rescue LoadError
+  puts "Please run `gem install bundler` and `bundle install`"
+end
 require 'sinatra/base'
 
 require File.dirname(__FILE__) + '/config/config'

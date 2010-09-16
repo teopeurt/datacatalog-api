@@ -1,6 +1,6 @@
 require 'rubygems'
-require 'rake/testtask'
 require 'rake/rdoctask'
+require 'rake/testtask'
 require 'rcov/rcovtask'
 
 require File.dirname(__FILE__) + '/config/config'
