@@ -7,6 +7,7 @@ group :test do
   gem 'crack', '~> 0.1.8'
   gem 'pending', '~> 0.1.1'
   gem 'rack-test', '~> 0.5.4'
+  gem 'rake', '~> 0.8.7'
   gem 'rcov', '~> 0.9.8'
   gem 'rr', '~> 1.0.0'
   gem 'timecop', '~> 0.3.5'
