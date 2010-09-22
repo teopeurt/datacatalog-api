@@ -23,6 +23,7 @@ class Source
   key :period_start,        Hash
   key :period_end,          Hash
   key :frequency,           String
+  key :missing,             Boolean, :default => false
   key :broken_links,        Hash
   key :organization_id,     ObjectId
   key :jurisdiction_id,     ObjectId
@@ -68,15 +69,18 @@ class Source
   # == Validations
 
   validates_presence_of :title
-  validates_presence_of :url
   validates_uniqueness_of :slug
   validates_format_of :slug,
     :with      => /\A[a-zA-z0-9\-]+\z/,
     :message   => "can only contain alphanumeric characters and dashes",
     :allow_nil => true
+  validates_presence_of :url, :if => Proc.new { !self.missing }
 
   include UrlValidator
-  validate :validate_url
+  validate :validate_source_url
+  def validate_source_url
+    validate_url unless missing
+  end
 
   SOURCE_TYPES = %w(
     api

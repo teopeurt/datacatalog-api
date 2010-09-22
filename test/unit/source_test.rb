@@ -90,7 +90,7 @@ class SourceUnitTest < ModelTestCase
     end
 
     context "source_type" do
-      context "missing" do
+      context "empty" do
         before do
           @source = Source.new(@valid_params.merge(:source_type => ""))
         end
@@ -223,6 +223,27 @@ class SourceUnitTest < ModelTestCase
 
           use "valid source"
         end
+      end
+    end
+
+    context "missing" do
+      context "true with attributes present" do
+        before do
+          @source = Source.new(@valid_params.merge(:missing => true))
+        end
+
+        use "valid source"
+      end
+
+      context "true with empty url" do
+        before do
+          @source = Source.new(@valid_params.merge({
+            :missing => true,
+            :url     => nil
+          }))
+        end
+
+        use "valid source"
       end
     end
 

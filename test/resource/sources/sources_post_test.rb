@@ -51,6 +51,7 @@ class SourcesPostTest < RequestTestCase
       jurisdiction_id
       license
       license_url
+      missing
       notes
       organization
       organization_id
