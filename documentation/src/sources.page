@@ -13,33 +13,34 @@ http://api.nationaldatacatalog.com/sources
 
 ## Schema
 
-    Field              R  W  Type       Description
-    -----              -  -  ----       -----------
-    id                 R     String     Unique ID (auto-generated upon creation)
-    title                 W  String     Unique name of data source
-    slug                     String     URL slug (auto-generated if not provided)
-    source_type           W  String     Either "dataset" or "api"
-    url                   W  String     Primary URL for this data source (should have metadata)
-    documentation_url        String     Official documentation for data source
-    license                  String     License for the data (e.g. public domain)
-    license_url              String     URL describing license
-    catalog_name             String     Name of originating catalog (e.g. "NYC Data Mine")
-    catalog_url              String     URL of originating catalog (e.g. "http://www.nyc.gov/html/datamine")
-    released                 Date Hash  When this source was publicly released
-    period_start             Date Hash  Beginning date for source's applicability
-    period_end               Date Hash  End date for source's applicability
-    frequency                String     How often the data source is released
-    broken_links             Hash       (see below)
-    organization_id          String     Organization that published this source.
-    ratings            R     Array      Embedded collection of Rating objects
-    rating_stats       R     Hash       Contains total, count, and average.
-    created_at         R     Time       Automatic timestamp on creation
-    updated_at         R     Time       Automatic timestamp on update
+    Field              Writeable By  Type       Description
+    -----              ------------  ----       -----------
+    id                 Nobody        String     Unique ID (auto-generated upon creation)
+    title              Curator       String     Unique name of data source
+    slug               Curator       String     URL slug (auto-generated if not provided)
+    description        Curator       String     Longer description
+    source_type        Curator       String     "dataset", "api", or "interactive"
+    url                Curator       String     Primary URL for this data source (should have metadata)
+    documentation_url  Curator       String     Official documentation for data source
+    license            Curator       String     License for the data (e.g. public domain)
+    license_url        Curator       String     URL describing license
+    catalog_name       Curator       String     Name of originating catalog (e.g. "NYC Data Mine")
+    catalog_url        Curator       String     URL of originating catalog (e.g. "http://www.nyc.gov/html/datamine")
+    released           Curator       Date Hash  When this source was publicly released
+    period_start       Curator       Date Hash  Beginning date for source's applicability
+    period_end         Curator       Date Hash  End date for source's applicability
+    frequency          Curator       String     How often the data source is released
+    missing            Curator       Boolean    Is this a missing data set?
+    broken_links       Curator       Hash       (see below)
+    organization_id    Curator       ObjectId   Organization that published this source.
+    jurisdiction_id    Nobody        ObjectId   Jurisdiction that this source belongs to.
+    ratings            Curator       Array      Embedded collection of Rating objects
+    rating_stats       Curator       Hash       Contains total, count, and average.
+    created_at         Curator       Time       Automatic timestamp on creation
+    updated_at         Curator       Time       Automatic timestamp on update
 
 *Notes*:
 
-* R denotes read-only fields
-* W denotes required fields when writing (creating or updating)
 * "Date Hash" is a Ruby hash intended for use with the Kronos gem.
 
 ### frequency
@@ -51,6 +52,13 @@ Valid values for frequency include:
     one-time / other / unknown
 
 A complete, up-to-date list can be found in [frequency.rb in the frequency gem](http://github.com/djsun/frequency/blob/master/lib/frequency.rb).
+
+### missing
+
+    false  existing data set, can we found on the Web
+    true   
+If false, the data set is an existing data set that can be found on the Web.
+When a data set is marked as missing, the validations are less strict.
 
 ### broken_links
 
