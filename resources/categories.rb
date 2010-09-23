@@ -25,6 +25,7 @@ module DataCatalog
         }
       end
     end
+    property :slug
     property :description
 
   end
