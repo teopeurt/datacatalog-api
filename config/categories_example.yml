@@ -1,47 +1,36 @@
 - name: Agriculture
 - name: Arts
-- name: Banking / Finance / Fiscal Policy
+- name: Banking / Insurance / Finance
 - name: Business
-- name: Children
+- name: Campaign Finance / Elections / Politics
+- name: Children / Families / Human Services
 - name: Civil Rights & Liberties
 - name: Climate / Environment
-- name: Communications / Information
-- name: Construction
+- name: Communications / Information / Internet
 - name: Crime / Law Enforcement
 - name: Demographics
-- name: Economics
+- name: Economics / Monetary Policy
 - name: Education
-- name: Elections / Politics / Campaign Finance
 - name: Employment / Labor
 - name: Energy / Natural Resources
-- name: Families
 - name: Foreign Commerce / Foreign Policy
 - name: Geography / Geospatial
-- name: Global Economy
 - name: Governance
 - name: Health / Nutrition
 - name: Housing / Urban
-- name: Human Services
 - name: Immigration
-- name: Insurance
-- name: International Development / Foreign Aid
-- name: Internet
+- name: Foreign Aid / International Development
 - name: Law / Courts
-- name: Monetary Policy
 - name: Metropolitan / Municipal
 - name: National Security
 - name: Philanthropy
 - name: Poverty / Welfare
 - name: Public Safety
-- name: Science & Technology
-- name: Social Insurance
-- name: Social Policy
-- name: Stimulus / Economic Development / Innovation
-- name: Taxes / Budget
-- name: Telecom
+- name: Science & Technology / Innovation
+- name: Stimulus / Economic Development
+- name: Budget / Fiscal Policy / Taxes
 - name: Trade
 - name: Transportation
 - name: Travel / Recreation
 - name: Utilities
 - name: Veterans Affairs
-- name: Wealth
