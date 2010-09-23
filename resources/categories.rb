@@ -17,16 +17,18 @@ module DataCatalog
     # == Properties
 
     property :name
-
-    property :sources do |category|
-      category.sources.map do |source|
-        {
-          "href" => "/sources/#{source.id}"
-        }
-      end
-    end
     property :slug
     property :description
+
+    # Useful, but resource-intensive, so removed for now.
+    #
+    # property :sources do |category|
+    #   category.sources.map do |source|
+    #     {
+    #       "href" => "/sources/#{source.id}"
+    #     }
+    #   end
+    # end
 
   end
 

@@ -25,7 +25,6 @@ class CategoriesGetOneTest < RequestTestCase
       created_at
       id
       name
-      sources
       slug
       description
       updated_at
@@ -63,16 +62,18 @@ class CategoriesGetOneTest < RequestTestCase
       end
 
       use "successful GET category with :id"
-
-      test "body should have correct sources" do
-        actual = parsed_response_body["sources"]
-        @sources.each do |source|
-          expected = {
-            "href" => "/sources/#{source.id}"
-          }
-          assert_include expected, actual
-        end
-      end
+      
+      # Resource-intensive (as the # of sources increases, so removed)
+      #
+      # test "body should have correct sources" do
+      #   actual = parsed_response_body["sources"]
+      #   @sources.each do |source|
+      #     expected = {
+      #       "href" => "/sources/#{source.id}"
+      #     }
+      #     assert_include expected, actual
+      #   end
+      # end
     end
   end
 
