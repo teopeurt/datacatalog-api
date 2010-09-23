@@ -6,6 +6,7 @@ class Category
 
   key :name,        String
   key :slug,        String
+  key :description, String
   timestamps!
 
   # == Indices

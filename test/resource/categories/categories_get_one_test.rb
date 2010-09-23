@@ -26,6 +26,7 @@ class CategoriesGetOneTest < RequestTestCase
       id
       name
       sources
+      description
       updated_at
     )
   end
