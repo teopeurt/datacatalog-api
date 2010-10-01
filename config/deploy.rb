@@ -1,3 +1,4 @@
+require "bundler/capistrano"
 set :environment, (ENV['target'] || 'staging')
 
 set :user, 'datcat'
