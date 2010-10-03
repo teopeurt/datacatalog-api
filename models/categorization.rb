@@ -9,6 +9,9 @@ class Categorization
   timestamps!
 
   # == Indices
+  
+  ensure_index :source_id
+  ensure_index :category_id
 
   # == Associations
 
