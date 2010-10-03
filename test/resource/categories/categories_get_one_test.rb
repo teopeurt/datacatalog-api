@@ -26,6 +26,7 @@ class CategoriesGetOneTest < RequestTestCase
       id
       name
       slug
+      source_count
       description
       updated_at
     )
