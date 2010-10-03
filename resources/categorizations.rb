@@ -35,7 +35,7 @@ module DataCatalog
         if category = categorization.category
           {
             "name" => category.name,
-            "href" => "/category/#{category.id}"
+            "href" => "/categories/#{category.id}"
           }
         end
       end
