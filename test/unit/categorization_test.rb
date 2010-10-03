@@ -29,6 +29,7 @@ class CategorizationUnitTest < ModelTestCase
             :category_id => category.id
           )
         end
+        @categories.each { |category| category.reload }
       end
 
       test "Source#categorizations should be correct" do
@@ -50,6 +51,34 @@ class CategorizationUnitTest < ModelTestCase
           assert_include @source, category.sources
         end
       end
+      
+      test "Category#source_count should be correct" do
+        @categories.each do |category|
+          assert_equal 1, category.source_count
+        end
+      end
+
+      context "change Categorization source" do
+        before do
+          @category = create_category(:name => "Healthcare")
+          @categorization = @categorizations[0]
+          @categorization.category = @category
+          @categorization.save
+          @categories.each { |c| c.reload }
+          @category.reload
+        end
+        
+        test "new category source_count should be correct" do
+          assert_equal 1, @category.source_count
+        end
+        
+        test "changed category should have decreased source_count" do
+          assert_equal 0, @categories[0].source_count
+          assert_equal 1, @categories[1].source_count
+          assert_equal 1, @categories[2].source_count
+        end
+      end
+      
     end
   end
 

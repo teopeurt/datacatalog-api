@@ -200,6 +200,7 @@ class Source
     end
   end
 
+  # NOTE: Could also use *_change (MongoMapper dirty attributes)
   before_update :save_previous
   def save_previous
     @previous_source = Source.first(:_id => self.id)

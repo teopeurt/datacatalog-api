@@ -19,6 +19,7 @@ module DataCatalog
     property :name
     property :slug
     property :description
+    property :source_count
 
     # Useful, but resource-intensive, so removed for now.
     #

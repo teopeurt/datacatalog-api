@@ -4,9 +4,10 @@ class Category
 
   # == Attributes
 
-  key :name,        String
-  key :slug,        String
-  key :description, String
+  key :name,         String
+  key :slug,         String
+  key :description,  String
+  key :source_count, Integer, :default => 0
   timestamps!
 
   # == Indices
