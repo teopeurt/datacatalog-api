@@ -5,7 +5,7 @@ class TagsDeleteTest < RequestTestCase
   def app; DataCatalog::Tags end
 
   before do
-    @tag = create_tag(:text => "Original Tag")
+    @tag = create_tag(:name => "Original Tag")
     @tag_count = Tag.count
   end
 

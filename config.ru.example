@@ -19,5 +19,6 @@ map("/reports")         { run DataCatalog::Reports }
 map("/resources")       { run DataCatalog::Resources }
 map("/sources")         { run DataCatalog::Sources }
 map("/source_groups")   { run DataCatalog::SourceGroups }
+map("/taggings")        { run DataCatalog::Taggings }
 map("/tags")            { run DataCatalog::Tags }
 map("/users")           { run DataCatalog::Users }

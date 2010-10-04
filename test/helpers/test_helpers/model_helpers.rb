@@ -213,8 +213,17 @@ module ModelHelpers
 
   def create_tag(custom={})
     create_model!(Tag, custom, {
-      :text => "Sample Tag"
+      :name => "sample"
     })
+  end
+
+  def create_tagging(custom={})
+    required = {
+      :source_id => get_fake_mongo_object_id,
+      :tag_id    => get_fake_mongo_object_id
+    }
+    required[:user_id] = @normal_user.id if @normal_user
+    create_model!(Tagging, custom, required)
   end
 
   # -----
@@ -304,8 +313,17 @@ module ModelHelpers
 
   def new_tag(custom={})
     new_model!(Tag, custom, {
-      :text => "Sample Tag"
+      :name => "sample"
     })
+  end
+
+  def new_tagging(custom={})
+    required = {
+      :source_id => get_fake_mongo_object_id,
+      :tag_id    => get_fake_mongo_object_id
+    }
+    required[:user_id] = @normal_user.id if @normal_user
+    new_model!(Tagging, custom, required)
   end
 
   def new_user(custom={})

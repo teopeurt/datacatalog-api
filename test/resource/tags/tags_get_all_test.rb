@@ -18,7 +18,7 @@ class TagsGetAllTest < RequestTestCase
   context "3 tags" do
     before do
       @tags = 3.times.map do |n|
-        create_tag(:text => "Tag #{n}")
+        create_tag(:name => "Tag #{n}")
       end
     end
 
@@ -36,8 +36,8 @@ class TagsGetAllTest < RequestTestCase
         assert_equal 3, @members.length
       end
 
-      test "body should have correct text" do
-        actual = (0 ... 3).map { |n| @members[n]["text"] }
+      test "body should have correct name" do
+        actual = (0 ... 3).map { |n| @members[n]["name"] }
         3.times { |n| assert_include "Tag #{n}", actual }
       end
     end

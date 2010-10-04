@@ -5,7 +5,7 @@ class TagsPutTest < RequestTestCase
   def app; DataCatalog::Tags end
 
   before do
-    @tag = create_tag(:text => "Original Tag")
+    @tag = create_tag(:name => "Original Tag")
     @tag_count = Tag.count
   end
 
@@ -17,16 +17,16 @@ class TagsPutTest < RequestTestCase
     before do
       put "/#{@tag.id}", {
         :api_key => @admin_user.primary_api_key,
-        :text    => "New Tag"
+        :name    => "New Tag"
       }
     end
 
     use "return 200 Ok"
     use "unchanged tag count"
 
-    test "text should be updated in database" do
+    test "name should be updated in database" do
       tag = Tag.find_by_id!(@tag.id)
-      assert_equal "New Tag", tag.text
+      assert_equal "New Tag", tag.name
     end
   end
 

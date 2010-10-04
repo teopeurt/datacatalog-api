@@ -59,9 +59,14 @@ class Source
   many :notes
   many :ratings
   many :downloads
+  many :taggings
 
   def categories
     categorizations.map(&:category)
+  end
+  
+  def tags
+    taggings.map(&:tag)
   end
 
   protected

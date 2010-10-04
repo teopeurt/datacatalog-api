@@ -10,8 +10,8 @@ class RequestTestCase < Test::Unit::TestCase
   before :all do
     [
       BrokenLink,
-      Categorization,
       Catalog,
+      Categorization,
       Category,
       Comment,
       Document,
@@ -24,6 +24,7 @@ class RequestTestCase < Test::Unit::TestCase
       Source,
       SourceGroup,
       Tag,
+      Tagging,
       User,
     ].each { |m| m.destroy_all }
     @normal_user = create_normal_user

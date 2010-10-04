@@ -5,7 +5,7 @@ class TagsGetOneTest < RequestTestCase
   def app; DataCatalog::Tags end
 
   before do
-    @tag = create_tag(:text => "Tag A")
+    @tag = create_tag(:name => "Tag A")
   end
 
   after do
@@ -20,16 +20,16 @@ class TagsGetOneTest < RequestTestCase
     use "return 200 Ok"
 
     test "body should have correct text" do
-      assert_equal "Tag A", parsed_response_body["text"]
+      assert_equal "Tag A", parsed_response_body["name"]
     end
 
     doc_properties %w(
       created_at
       id
-      source_id
-      text
+      name
+      slug
+      source_count
       updated_at
-      user_id
     )
   end
 

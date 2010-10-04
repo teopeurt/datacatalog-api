@@ -5,30 +5,21 @@ class TagsGetFilterTest < RequestTestCase
   def app; DataCatalog::Tags end
 
   shared "successful GET of tags where text is 'tag 1'" do
-    test "body should have 2 top level elements" do
-      assert_equal 2, @members.length
+    test "body should have 1 top level elements" do
+      assert_equal 1, @members.length
     end
 
     test "each element should be correct" do
       @members.each do |element|
-        assert_equal "tag 1", element["text"]
-        assert_equal @user_id, element["user_id"]
-        assert_equal "#{@source_base}1", element["source_id"]
+        assert_equal "tag 1", element["name"]
       end
     end
   end
 
-  context "6 tags" do
+  context "3 tags" do
     before do
-      @user_id       = "4aa677bb25b7e70733000001"
-      @source_base   = "200077d325b7e7073300000"
-      @tags = 6.times.map do |n|
-        k = (n % 3) + 1
-        create_tag(
-          :text      => "tag #{k}",
-          :user_id   => @user_id,
-          :source_id => "#{@source_base}#{k}"
-        )
+      @tags = 3.times.map do |n|
+        create_tag(:name => "tag #{n}")
       end
     end
 
@@ -40,7 +31,7 @@ class TagsGetFilterTest < RequestTestCase
       before do
         get "/",
           :api_key => @normal_user.primary_api_key,
-          :filter  => "text='tag 1'"
+          :filter  => "name='tag 1'"
         @members = parsed_response_body['members']
       end
 

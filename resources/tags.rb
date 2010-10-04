@@ -16,9 +16,9 @@ module DataCatalog
 
     # == Properties
 
-    property :text
-    property :source_id
-    property :user_id
+    property :name
+    property :slug
+    property :source_count
 
   end
 

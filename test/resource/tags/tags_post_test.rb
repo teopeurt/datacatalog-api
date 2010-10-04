@@ -12,7 +12,7 @@ class TagsPostTest < RequestTestCase
     before do
       post "/", {
         :api_key => @curator_user.primary_api_key,
-        :text    => "Tag A",
+        :name    => "Tag A",
       }
     end
 
@@ -27,12 +27,12 @@ class TagsPostTest < RequestTestCase
     end
 
     test "body should have correct text" do
-      assert_equal "Tag A", parsed_response_body["text"]
+      assert_equal "Tag A", parsed_response_body["name"]
     end
 
-    test "text should be correct in database" do
+    test "name should be correct in database" do
       tag = Tag.find_by_id!(parsed_response_body["id"])
-      assert_equal "Tag A", tag.text
+      assert_equal "Tag A", tag.name
     end
   end
 
