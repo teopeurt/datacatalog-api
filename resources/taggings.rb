@@ -36,6 +36,7 @@ module DataCatalog
         if tag = tagging.tag
           {
             "name" => tag.name,
+            "slug" => tag.slug,
             "href" => "/tags/#{tag.id}"
           }
         end
