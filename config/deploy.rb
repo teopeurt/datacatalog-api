@@ -39,13 +39,22 @@ namespace :deploy do
     run "webgen -d #{release_path}/documentation"
     run "ln -nfs #{release_path}/documentation/out #{shared_path}/docs"
 
-    run "ln -nfs #{shared_path}/config.ru #{release_path}/config.ru"
-    run "ln -nfs #{shared_path}/config/config.yml #{release_path}/config/config.yml"
-    run "ln -nfs #{shared_path}/config/users.yml #{release_path}/config/users.yml"
-    run "ln -nfs #{shared_path}/config/organizations.yml #{release_path}/config/organizations.yml"
+    %w(
+      config.ru
+      config/categories.yml
+      config/config.yml
+      config/organizations.yml
+      config/users.yml
+    ).each do |filename|
+      run "ln -nfs #{shared_path}/#{filename} #{release_path}/#{filename}"
+    end
 
-    run "rm #{File.join release_path, 'tmp', 'pids'}"
-    run "rm #{File.join release_path, 'public', 'system'}"
-    run "rm #{File.join release_path, 'log'}"
+    %w(
+      tmp/pids
+      public/system
+      log
+    ).each do |directory|
+      run "rm #{File.join(release_path, directory)}"
+    end
   end
 end
