@@ -2,6 +2,7 @@ source :rubygems
 
 gem 'sinatra_resource', '~> 0.4.24'
 gem 'bson_ext', '~> 1.0.7'
+gem 'webgen'
 
 group :test do
   gem 'crack', '~> 0.1.8'
