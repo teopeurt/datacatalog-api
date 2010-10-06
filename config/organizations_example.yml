@@ -1,43 +1,57 @@
 - name: USA Federal Government
   acronym:
-  slug: usa
+  slug: usa-federal-govt
+  slug_suffix: ""
   org_type: governmental
   top_level: true
 - name: USA Executive Branch
   acronym:
-  slug: executive
+  slug: usa-executive-branch
+  slug_suffix: ""
   parent_name: USA Federal Government
   org_type: governmental
   top_level: false
 - name: USA Judicial Branch
   acronym:
-  slug: judicial
+  slug: usa-judicial-branch
+  slug_suffix: ""
   parent_name: USA Federal Government
   org_type: governmental
   top_level: false
 - name: USA Legislative Branch
   acronym:
-  slug: legislative
+  slug: usa-legislative-branch
+  slug_suffix: ""
   parent_name: USA Federal Government
   org_type: governmental
   top_level: false
+- name: Colorado
+  acronym: CO
+  slug: colorado
+  slug_suffix: colorado
+  org_type: governmental
+  top_level: true
 - name: District of Columbia
   acronym: DC
   slug: dc
+  slug_suffix: dc
   org_type: governmental
   top_level: true
 - name: Utah
-  acronym:
+  acronym: 
   slug: utah
+  slug_suffix: utah
   org_type: governmental
   top_level: true
 - name: San Francisco
   acronym:
   slug: san-francisco
+  slug_suffix: san-francisco
   org_type: governmental
   top_level: true
-- name: Texas
+- name: Massachusetts
   acronym:
-  slug: texas
+  slug: massachusetts
+  slug_suffix: massachusetts
   org_type: governmental
   top_level: true
