@@ -1,4 +1,4 @@
-require File.expand_path(File.dirname(__FILE__) + '/../test_unit_helper')
+require File.expand_path('../../test_unit_helper', __FILE__)
 require 'timecop'
 
 class SourceUnitTest < ModelTestCase

@@ -1,4 +1,4 @@
-require File.expand_path(File.dirname(__FILE__) + '/../../test_resource_helper')
+require File.expand_path('../../../test_resource_helper', __FILE__)
 
 # The root action(s) provide basic information about the API.
 class RootResourceTest < RequestTestCase

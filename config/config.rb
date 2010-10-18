@@ -57,7 +57,7 @@ module Config
     if @config
       @config
     else
-      file = File.join(File.dirname(__FILE__), "config.yml")
+      file = File.expand_path('../config.yml', __FILE__)
       @config = YAML.load_file(file)
     end
   end
@@ -66,7 +66,7 @@ module Config
     if @default_users
       @default_users
     else
-      file = File.join(File.dirname(__FILE__), "users.yml")
+      file = File.expand_path('../users.yml', __FILE__)
       @default_users = YAML.load_file(file)
     end
   end
@@ -75,7 +75,7 @@ module Config
     if @default_organizations
       @default_organizations
     else
-      file = File.join(File.dirname(__FILE__), "organizations.yml")
+      file = File.expand_path('../organizations.yml', __FILE__)
       @default_organizations = YAML.load_file(file)
     end
   end
@@ -84,7 +84,7 @@ module Config
     if @default_categories
       @default_categories
     else
-      file = File.join(File.dirname(__FILE__), "categories.yml")
+      file = File.expand_path('../categories.yml', __FILE__)
       @default_categories = YAML.load_file(file)
     end
   end

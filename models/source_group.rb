@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + '/source_snippet'
+require File.expand_path('../source_snippet', __FILE__)
 
 class SourceGroup
 

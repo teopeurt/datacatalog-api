@@ -1,2 +1,2 @@
-require File.dirname(__FILE__) + '/test_helper'
-require File.dirname(__FILE__) + '/../app'
+require File.expand_path('../test_helper', __FILE__)
+require File.expand_path('../../app', __FILE__)

@@ -14,7 +14,7 @@ Dir.glob(base + '/helpers/test_cases/*.rb'  ).each { |f| require f }
 Dir.glob(base + '/helpers/assertions/*.rb'  ).each { |f| require f }
 Dir.glob(base + '/helpers/shared/*.rb'      ).each { |f| require f }
 
-require File.dirname(__FILE__) + '/../config/config'
+require File.expand_path('../../config/config', __FILE__)
 Config.environment = 'test'
 
 class Test::Unit::TestCase

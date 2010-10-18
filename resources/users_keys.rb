@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + '/users'
+require File.expand_path('../users', __FILE__)
 
 module DataCatalog
 
