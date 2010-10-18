@@ -3,7 +3,7 @@ GEM
   specs:
     activesupport (3.0.1)
     bson (1.1.1)
-    bson_ext (1.0.9)
+    bson_ext (1.1.1)
     cmdparse (2.0.2)
     crack (0.1.8)
     frequency (0.1.5)
@@ -52,7 +52,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bson_ext (~> 1.0.7)
+  bson_ext (~> 1.1.1)
   crack (~> 0.1.8)
   pending (~> 0.1.1)
   rack-test (~> 0.5.4)

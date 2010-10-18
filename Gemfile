@@ -1,7 +1,7 @@
 source :rubygems
 
 gem 'sinatra_resource', '~> 0.4.24'
-gem 'bson_ext', '~> 1.0.7'
+gem 'bson_ext', '~> 1.1.1'
 gem 'webgen'
 
 group :test do
