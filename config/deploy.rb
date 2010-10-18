@@ -6,6 +6,7 @@ set :repository, "git://github.com/sunlightlabs/#{application}.git"
 set :scm, :git
 set :use_sudo, false
 set :deploy_via, :remote_cache
+set :user, "datcat"
 
 # Documentation :runner and :admin_runner is here:
 # http://weblog.jamisbuck.org/2008/6/13/capistrano-2-4-0
@@ -20,12 +21,10 @@ case environment
 when 'production'
   set :domain, 'api.nationaldatacatalog.com'
   set :branch, 'production'
-  set :user, "datcat"
   set :deploy_to, "/home/#{user}/www/#{application}"
 when 'staging'
   set :domain, 'api.staging.nationaldatacatalog.com'
   set :branch, 'staging'
-  set :user, "natdatcat"
   set :deploy_to, "/projects/#{user}/www/#{application}"
 else
   raise "Invalid environment: #{environment}"
